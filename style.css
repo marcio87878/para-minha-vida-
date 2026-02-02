@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+    background: #000;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-image: url('https://i.postimg.cc/RFWkvrXG/Captura-de-tela-2026-02-02-154705.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    z-index: 0;
+}
+
+.header, .main-content, .footer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Estilo do título */
+.header {
+    text-align: center;
+    padding: 30px 20px;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+}
+
+.pink-text {
+    color: #ff6bcd;
+    text-shadow: 0 0 10px rgba(255, 107, 205, 0.7);
+}
+
+.blue-text {
+    color: #6ba8ff;
+    text-shadow: 0 0 10px rgba(107, 168, 255, 0.7);
+}
+
+.white-text {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #e6e6fa;
+    margin-top: 10px;
+    text-shadow: 0 0 10px rgba(230, 230, 250, 0.5);
+}
+
+/* Coração de galáxias */
+.heart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    padding: 30px;
+    animation: fadeIn 2s ease-out;
+}
+
+.galaxy-heart {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    filter: drop-shadow(0 0 25px rgba(255, 105, 180, 0.5));
+}
+
+.heart-piece {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,182,193,0.9) 0%, rgba(147,112,219,0.8) 50%, rgba(72,61,139,0.7) 100%);
+    animation: float 6s infinite ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.7);
+    transition: transform 0.5s ease;
+}
+
+.heart-piece:hover {
+    transform: scale(1.2);
+    z-index: 10;
+}
+
+.heart-message {
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 182, 193, 0.3);
+    text-align: center;
+    max-width: 600px;
+}
+
+.heart-message p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #ffb6c1;
+    text-shadow: 0 0 10px rgba(255, 182, 193, 0.7);
+}
+
+/* Caixa de mensagem */
+.message-box {
+    background: rgba(10, 10, 35, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 800px;
+    border: 1px solid rgba(107, 168, 255, 0.2);
+    box-shadow: 0 0 30px rgba(107, 168, 255, 0.2);
+    animation: fadeInUp 2s ease-out;
+}
+
+.message-box h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.pink-icon {
+    color: #ff6bcd;
+    margin-right: 15px;
+}
+
+.blue-icon {
+    color: #6ba8ff;
+    margin-left: 15px;
+}
+
+.love-message {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e6e6fa;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #ffb6c1;
+    margin-top: 30px;
+}
+
+/* Seção interativa */
+.interactive-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    padding: 30px;
+    background: rgba(20, 10, 40, 0.6);
+    border-radius: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.action-btn {
+    background: linear-gradient(to right, #ff6bcd, #6ba8ff);
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    margin: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.action-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 107, 205, 0.4);
+    background: linear-gradient(to right, #ff80d5, #80b3ff);
+}
+
+.star-counter {
+    margin-top: 25px;
+    font-size: 1.5rem;
+    color: #FFD700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gold-star {
+    color: #FFD700;
+    margin-right: 10px;
+    font-size: 1.8rem;
+    animation: pulse 2s infinite;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 182, 193, 0.2);
+    font-size: 1.2rem;
+    color: #b19cd9;
+}
+
+.heart-beat {
+    color: #ff6bcd;
+    margin: 0 8px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.date {
+    margin-top: 15px;
+    font-style: italic;
+    color: #a8d0ff;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { 
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Efeitos de partículas de estrelas */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) infinite var(--delay);
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3.2rem;
+    }
+    
+    .galaxy-heart {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .heart-message p {
+        font-size: 1.7rem;
+    }
+    
+    .message-box h2 {
+        font-size: 2.2rem;
+    }
+    
+    .love-message {
+        font-size: 1.3rem;
+    }
+    
+    .action-btn {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .galaxy-heart {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .heart-message p {
+        font-size: 1.5rem;
+    }
+    
+    .message-box {
+        padding: 25px;
+    }
+    
+    .interactive-section {
+        padding: 20px;
+    }
+}
